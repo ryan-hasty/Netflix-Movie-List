@@ -36,6 +36,10 @@ public class ShowInWeek {
 		this.cumulative = cumulative;
 	}
 
+	public ShowInWeek(Object selectedItem) {
+		
+	}
+
 	// Getters and Setters
 	public String getTitle() {
 		return title;
@@ -113,7 +117,7 @@ public class ShowInWeek {
 		String callerID;
 		callerID = this.getWeek_date() + this.getTitle();
 
-		// Compared object is the object in parameter
+		// Compare callerID to the object is the object in parameter
 		String compID = inputObj.getWeek_date() + inputObj.getTitle();
 
 		// if the two strings equal each other then it's the same "ID"

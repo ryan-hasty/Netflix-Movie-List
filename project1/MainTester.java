@@ -21,18 +21,19 @@ public class MainTester {
 		
 		// Test reading in file
 		ShowList shlist = new ShowList("./project1/netflixTopTenProcessed.txt");	
+//		System.out.println(shlist);
 		
-		// Create ShowList
+		// Create ShowList2
 		ShowList shlist2 = new ShowList();
 		
 		// testing adding shows individually
-		shlist2.addShow(t2);		
-		shlist2.addShow(t3);
-		shlist2.addShow(t4);
+//		shlist2.addShow(t2);		
+//		shlist2.addShow(t3);
+//		shlist2.addShow(t4);
 //		System.out.println(shlist2);
 
 		// Test to print out the list
-		System.out.println(shlist);
+//		System.out.println(shlist);
 		
 		// Test getShows() Method which prints out the shows to watch in the function
 //		shlist.getShows(t2);
@@ -65,7 +66,7 @@ public class MainTester {
 					
 		
 		// Test Write to file
-//		shlist.writeFile("./project1/datatesting.txt");
+		shlist.writeFile("./project1/datatesting.txt");
 		
 	}
 

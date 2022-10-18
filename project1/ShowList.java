@@ -19,13 +19,14 @@ public class ShowList {
 	//private Scanner scan = new Scanner(System.in);
 	Random random = new Random();
 	
-	
+	// default constructor
 	public ShowList()
 	{
 		sList = new ArrayList<ShowInWeek>();
 		fileName = null;
 	}
-
+	
+	// constructor with filename passed in
 	public ShowList(String fn) {
 		// constructor with given data and input file
 		this();
@@ -33,6 +34,7 @@ public class ShowList {
 		readFile();
 	}	
 
+	// add a show to the list
 	public void addShow(ShowInWeek s)
 	{
 
@@ -50,14 +52,26 @@ public class ShowList {
 		return returnMe;
 	}
 	
+	public ShowList nonPurged()
+	{
+		ShowList myShows = new ShowList();
+		for(ShowInWeek show : sList)
+		{
+			if(!isPurged(show))
+			{
+				myShows.addShow(show);
+			}
+		}
+		
+		return myShows;
+	}
+	
 	// Purge a given show
 	public void purge(ShowInWeek s) 
 	{
-		// need to make this purge all shows with name
-		// use for each
 		// if the show list contains specified object then mark
 
-		String temp = s.getTitle() + s.getCategory();
+		String temp = s.getTitle() + s.getCategory(); // title + category makes it seem like it would be the same show
 
 		for (ShowInWeek showInWeek : sList) {
 
@@ -67,7 +81,28 @@ public class ShowList {
 			}
 		}
 	}
-
+	
+	public void purgeStringBased(String s)
+	{
+		
+		for (ShowInWeek showInWeek : sList)
+		{
+			if ((showInWeek.getWeek_date() + "   " + showInWeek.getTitle()).equals(s))
+			{
+				purge(showInWeek);
+			}
+		}
+	}
+	public void unpurgeStringBased(String s)
+	{
+		for (ShowInWeek showInWeek : sList)
+		{
+			if (((showInWeek.getTitle()).startsWith("*")) && ((showInWeek.getWeek_date() + "   "+ showInWeek.getTitle())).equals(s))
+			{
+				unpurge(showInWeek);
+			}
+		}
+	}
 	// Unpurge a given show
 	public void unpurge(ShowInWeek s)
 	{
@@ -86,9 +121,8 @@ public class ShowList {
 	// Check if is purged
 	public boolean isPurged(ShowInWeek s)
 	{
-		if(s.getWeek_date().startsWith("*"))
+		if(s.getTitle().startsWith("*"))
 		{
-			System.out.println("This show is purged: " + s.getTitle() + " getting another one");
 			return true;
 		}
 		return false;
@@ -267,12 +301,76 @@ public class ShowList {
 		System.out.println(returnList);
 		return returnList;
 	}
+	
+	public ShowList getShowsDateBased(String s)
+	{
+		ShowList returnL = new ShowList();
+		for(ShowInWeek shows : sList)
+		{
+			if(shows.getWeek_date().equals(s)) {
+				returnL.addShow(shows);
+			}
+		}
+		return returnL;
+	}
+	public ShowList purgeList()
+	{
+		ShowList purgedList = new ShowList();
+		
+		for(ShowInWeek x : sList)
+		{
+			if(isPurged(x))
+			{
+				purgedList.addShow(x);
+			}
+		}
+		
+		return purgedList;
+	}
+	
+	public ShowList myRemovedList(String s)
+	{
+		ShowList anotherList = new ShowList();
+		for(ShowInWeek x : sList)
+		{
+			if((x.getWeek_date() + "   " + x.getTitle()).equals(s))
+			{
+				continue;
+			}
+			anotherList.addShow(x);
+		}
+		
+		return anotherList;
+		
+	}
+	public String[] toArray() {
 
-	
-	
-	
-	
-	
+		String myArr[] = new String[sList.size()];
+		int count = 0;
+		for(ShowInWeek x : sList)
+		{
+			myArr[count] = x.getWeek_date() + "   " + x.getTitle();
+			count++;
+		}
+		return myArr;
+	}
+
+
+//	public ShowList getAll()
+//	{
+//		ShowList toReturn = new ShowList();
+//		
+//		for(ShowInWeek showInWeek: sList)
+//		{
+//			
+//			if(!isPurged(showInWeek))
+//			{
+//				toReturn.addShow(showInWeek);
+//			}
+//		}
+//		
+//		return toReturn;
+//	}
 	private void readFile () {
 		BufferedReader lineReader = null;
 		try {
@@ -343,7 +441,7 @@ public class ShowList {
 		doWrite(altFileName);		
 	}// end of writeFile method
 	
-	private void doWrite(String fn) {
+	void doWrite(String fn) {
 		// this method writes all of the data in the persons array to a file
 		try
 		{
@@ -368,8 +466,7 @@ public class ShowList {
 			e.printStackTrace();
 			System.err.println("Didn't save to " + fn);
 		}
-	}	
-
+	}
 
 
 }
