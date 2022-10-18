@@ -5,26 +5,19 @@ import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import java.awt.Color;
-import java.util.ArrayList;
 
 import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Image;
-import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
-import javax.swing.JSpinner;
 import javax.swing.JEditorPane;
-import javax.swing.JTextPane;
 import javax.swing.JSeparator;
 
 public class MainPanel extends JPanel {
@@ -32,7 +25,6 @@ public class MainPanel extends JPanel {
 	private static final long serialVersionUID = -5060725585828913409L;
 	
 	private ShowList myShowList;
-	private ShowList myTextFile;
 	private JTextField textField;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	
@@ -42,14 +34,6 @@ public class MainPanel extends JPanel {
 		
 		setBackground(new Color(0, 0, 0));
 		setLayout(null);
-		
-//		JScrollPane scrollPane = new JScrollPane();
-//		scrollPane.setBounds(250, 67, 200, 200);
-//		add(scrollPane);
-//		
-//		JTextArea textArea = new JTextArea();
-//		scrollPane.setViewportView(textArea);
-//		textArea.setText(myShowList.toString());
 		
 		JComboBox comboBox = new JComboBox();
 		String[] ids = myShowList.toArray();
@@ -76,27 +60,30 @@ public class MainPanel extends JPanel {
 		lblNewLabel.setBounds(272, 14, 101, 37);
 		add(lblNewLabel);
 		
+		
 		JButton btnNewButton = new JButton("ADD");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JEditorPane editorPane = new JEditorPane();
+				editorPane.setBounds(42, 244, 117, 72);
+				add(editorPane);				
+//				JTextArea textArea = new JTextArea();
+//				textArea.setText(textField.getText());	
+//				
+//				editorPane.setText(editorPane.getSelectedText());
+//				System.out.println(editorPane.getSelectedText());
+			}
+		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnNewButton.setBounds(42, 19, 117, 23);
 		add(btnNewButton);
-		
-		
-//		JScrollPane scrollPane = new JScrollPane();
-//		scrollPane.setBounds(250, 67, 200, 200);
-//		add(scrollPane);
-//		
-//		JTextArea textArea = new JTextArea();
-//		scrollPane.setViewportView(textArea);
-//		textArea.setText(myShowList.toString());
-		
 
 		
 		JButton btnNewButton_1 = new JButton("EDIT");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				// add code to edit show
 				
 				JEditorPane editorPane = new JEditorPane();
 				editorPane.setBounds(42, 244, 117, 72);
@@ -248,11 +235,7 @@ public class MainPanel extends JPanel {
 		
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBounds(192, 223, 1, 2);
-		add(separator_1);
-		
-
-		
-		
+		add(separator_1);		
 
 	}
 	public void doClose() {

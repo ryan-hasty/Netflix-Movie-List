@@ -333,7 +333,7 @@ public class ShowList {
 		ShowList anotherList = new ShowList();
 		for(ShowInWeek x : sList)
 		{
-			if((x.getWeek_date() + "   " + x.getTitle()).equals(s))
+			if((x.getWeek_date() + "   " + x.getTitle()).equals(s) || isPurged(x))
 			{
 				continue;
 			}
@@ -355,22 +355,6 @@ public class ShowList {
 		return myArr;
 	}
 
-
-//	public ShowList getAll()
-//	{
-//		ShowList toReturn = new ShowList();
-//		
-//		for(ShowInWeek showInWeek: sList)
-//		{
-//			
-//			if(!isPurged(showInWeek))
-//			{
-//				toReturn.addShow(showInWeek);
-//			}
-//		}
-//		
-//		return toReturn;
-//	}
 	private void readFile () {
 		BufferedReader lineReader = null;
 		try {

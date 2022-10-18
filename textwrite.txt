@@ -7,13 +7,6 @@ N/A
 2
 2022-09-04
 Films (English)
-2
-Love in the Villa
-N/A
-41220000
-1
-2022-09-04
-Films (English)
 3
 I Came By
 N/A
@@ -26,20 +19,6 @@ That's Amor
 N/A
 17420000
 2
-2022-09-04
-Films (English)
-5
-Look Both Ways
-N/A
-11780000
-3
-2022-09-04
-Films (English)
-6
-Day Shift
-N/A
-9450000
-4
 2022-09-04
 Films (English)
 7
@@ -116,20 +95,6 @@ Films (Non-English)
 School Life
 N/A
 3420000
-1
-2022-09-04
-Films (Non-English)
-8
-Royalteen
-N/A
-3040000
-3
-2022-09-04
-Films (Non-English)
-9
-Rise of the Legend
-N/A
-2630000
 1
 2022-09-04
 Films (Non-English)
@@ -301,13 +266,6 @@ N/A
 2
 2022-08-28
 Films (English)
-4
-Day Shift
-N/A
-20460000
-3
-2022-08-28
-Films (English)
 5
 Purple Hearts
 N/A
@@ -355,13 +313,6 @@ Loving Adults
 N/A
 17480000
 1
-2022-08-28
-Films (Non-English)
-2
-Royalteen
-N/A
-10440000
-2
 2022-08-28
 Films (Non-English)
 3
@@ -560,13 +511,6 @@ Pasión de Gavilanes: Season 1
 6
 2022-08-21
 Films (English)
-1
-Day Shift
-N/A
-63390000
-2
-2022-08-21
-Films (English)
 2
 Look Both Ways
 N/A
@@ -627,13 +571,6 @@ Films (English)
 Inside the Mind of a Cat
 N/A
 6990000
-1
-2022-08-21
-Films (Non-English)
-1
-Royalteen
-N/A
-11910000
 1
 2022-08-21
 Films (Non-English)
@@ -838,13 +775,6 @@ Good Morning, Verônica
 Good Morning, Verônica: Season 2
 7020000
 3
-2022-08-14
-Films (English)
-1
-Day Shift
-N/A
-56510000
-1
 2022-08-14
 Films (English)
 2
